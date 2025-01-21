@@ -1,58 +1,68 @@
-//BIENVENIDA
-alert("Bienvenido a tu calculadora de gastos!");
+const d= document;
 
-//Ingreso de gastos:
-
-let dineroDisponible=prompt("Cuanto dinero tiene disponible?");
-let gastosIngresados= prompt("Cuantos gastos quiere ingresar?");
-let montoGastos=prompt("Monto de los gastos:");
-
-//Validación
-if (isNaN(dineroDisponible)  || isNaN(montoGastos)) {
-    alert("Por favor, ingresa valores numéricos válidos.");
-} else {let totalGastos=0;}
-
-let gastos=[];
-
-// Procesamiento: Pedir cada gasto y categoría al usuario
-  for (let i = 1; i <= gastosIngresados; i++) {
-    let montoGastos = parseFloat(prompt(`Ingresa el monto del gasto ${i}:`));
-    
-// Validar el monto del gasto
-    if (isNaN(montoGastos) || montoGastos < 0) {
-        alert("Por favor, ingresa un monto válido para el gasto.");
-        i--; // Repetir la iteración
-        continue;
-    }
-    
-    // Pedir la categoría del gasto
-    let categoria = prompt(`¿Cuál es la categoría del gasto ${i}? (Ejemplo: Comida, Transporte, Entretenimiento)`);
-
-    // Guardar el gasto y la categoría en el array
-    gastos.push({ monto: montoGastos, categoria: categoria });
-}
+//VARIABLES DINERO DISPONIBLE
+let dineroDisponible= d.getElementById("dineroDisponible");
+const botonDinero= d.getElementById("botonDinero");
+const salida= d.getElementById("salida");
 
 
+//VARIABLES MONTO GASTOS
+let monto= d.getElementById("monto");
+const botonMonto= d.getElementById("botonMonto");
+const salidaMonto=d.getElementById("salidaMonto");
+const categoria= d.getElementById("categoria");
+const egresos= d.getElementById("egresos");
+//Almacenamiento
+let totalDinero= 0;
+let listaGastos= [];
 
-//Calculo de gastos:
-let totalGastos=0;
-
-for (let i = 1; i <= gastosIngresados; i++) {
-    let gasto = parseFloat(prompt(`Ingresa el monto total de los gastos ${i}:`));
-    totalGastos += gasto; }
-
-    // Mostrar resumen en la consola
-    console.log("Resumen de tus gastos:");
-    gastos.forEach((gasto, index) => {
-        console.log(`Gasto ${index + 1}: $${gasto.monto.toFixed(2)} en ${gasto.categoria}`);
-    });
-
-    let dineroRestante = dineroDisponible - totalGastos;
-
-    // Mostrar resultado final
-    console.log(`Total de gastos: $${totalGastos.toFixed(2)}`);
-    console.log(`Dinero disponible: $${(dineroDisponible)}`);
-    console.log(`Dinero restante: $${(dineroRestante)}`);
+//Visualzacón Dinero Disponible
+botonDinero.addEventListener("click",()=>{
+   const dineroTotal= parseFloat(dineroDisponible.value);
+   if (isNaN(dineroTotal) || dineroTotal <= 0) {
+      salida.textContent = "Por favor, introduce un valor válido mayor a 0.";
+   return;}
+// Actualizar dinero disponible(operación)
+  totalDinero = dineroTotal;
 
 
-  console.log("Fin del calculo");
+      salida.textContent = `Dinero disponible: $${totalDinero.toFixed(2)}`;
+      dineroDisponible.value = "";  });
+
+
+//Visualización Monto Gastos
+botonMonto.addEventListener("click",()=>{
+   const montoGasto= parseFloat(monto.value);
+   const categoriaSeleccionada= categoria.value;
+
+// Validar los gastos
+if (isNaN(montoGasto) || montoGasto <= 0) {
+   alert("Introduce un monto válido.");
+   return;
+ }
+
+ 
+
+ if (categoriaSeleccionada === "0") {
+   alert("Selecciona una categoría válida.");
+   return;} 
+
+ if (montoGasto > totalDinero) {
+   alert("No tienes suficiente dinero disponible.");
+   return;}  
+
+   //Restar el gasto del dinero disponible
+   totalDinero - montoGasto;
+ // Guardar el gasto en la lista
+ listaGastos.push({ categoria: categoriaSeleccionada, monto: montoGasto });
+
+   //Mostrar el gasto en la sección de egresos
+  const nuevoGasto= d.createElement("p");
+  nuevoGasto.textContent= `${categoriaSeleccionada}: $${montoGasto.toFixed(2)}`;
+   egresos.appendChild(nuevoGasto);
+
+    // Actualizar el dinero disponible
+    salida.textContent = `Dinero disponible: $${totalDinero.toFixed(2)}`;
+      // Limpiar los campos
+  monto.value = "";
+  categoria.value = "0"; });
