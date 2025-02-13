@@ -1,0 +1,33 @@
+{
+  "name": "simulador-gastos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node js/script.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "node"
+  ],
+  "author": "Leonardo Alcala",
+  "license": "ISC",
+  "description": "Este es un simulador de gastos",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leoaa02/Simulador-Gastos.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leoaa02/Simulador-Gastos/issues"
+  },
+  "homepage": "https://github.com/leoaa02/Simulador-Gastos#readme",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.0.4",
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^4.0.4"
+  }
+}

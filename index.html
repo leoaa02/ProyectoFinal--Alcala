@@ -5,58 +5,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>SIMULADOR DE GASTOS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.min.js"></script>
+  <title>Pocket Plan</title>
 </head>
 
 <body>
-  <h1 class="titulo">SIMULADOR DE GASTOS:</h1>
-  <p class="text">Descripción:</p>
+  <h1 class="titulo">POCKET PLAN</h1>
+  <hr>
   <p class="text">Este simulador te permite calcular cuánto dinero te queda después de ingresar
     tus gastos.</p>
 
+    <!--MODO OSCURO-->
+    <label for="toggle" id="label_toggle"> <i class="fa-solid fa-moon"></i></label>
+    <input type="checkbox" name="mode" id="toggle">
+    
+<!--CONTENEDOR-->
+    <div class="container">
+    <div class="row align-items-start">
+    <div class="col-1">
+    <label for="dineroDisponible" class="titulodinerodisponible">Dinero Disponible:</label>
+    <input type="text" min="0" id="dineroDisponible" class="dinerodisponible" placeholder="Ingresa tu disponibilidad" required>
+    <button id="botonDinero" class="botondinero">Toca aquí</button>
+    <div id="salida"></div>
+    </div>
 
-  <p class="text">Ingresa tu dinero disponible, y a continuación ingresa el monto de tus gastos,
-    selecciona la categoria a la que pertenece, y veras el saldo restante en la sección de egresos.
-  </p>
+    <div class="col-2">
+      <div class="container-gastos">
+        <div class="table">
+          <div class="col">
+            Categoria:
+            <select name="categoria" id="categoria" class="categoria">
+              <option value="0">Seleccione</option>
+              <option value="Comida">Comida</option>
+              <option value="Alquiler">Alquiler</option>
+              <option value="Expensas">Expensas</option>
+              <option value="Servicios">Servicios</option>
+              <option value="Streaming">Streaming</option>
+              <option value="Musica">Musica</option>
+            </select>
+            <div id="salidaCategoria"></div>
+          </div>
+    
+    </div>
 
-  <label for="dineroDisponible" class="titulodinerodisponible">Dinero Disponible:</label>
-  <input type="text" min="0" id="dineroDisponible" class="dinerodisponible" placeholder="Ingresa tu disponibilidad" required>
-  <button id="botonDinero">Toca aquí</button>
-  <div id="salida"></div>
-  <!--TABLA DE GASTOS-->
-  <div class="container-gastos">
-    <div class="table">
-      <div class="col">
-        Categoria
-        <select name="categoria" id="categoria" class="categoria">
-          <option value="0">Seleccione</option>
-          <option value="1">Comida</option>
-          <option value="2">Alquiler</option>
-          <option value="3">Expensas</option>
-          <option value="4">Servicios</option>
-          <option value="5">Streaming</option>
-          <option value="6">Musica</option>
-        </select>
-      </div>
-
-      <div class="col">
-        <label>Monto:
+  </div>
+</div>
+      <div class="col-3">
+        <label class="label-monto">Monto:
           <input type="text" min="0" id="monto" placeholder="Ingresa solo numeros" class="monto" required>
-          <button id="botonMonto">Toca aquí</button>
+          <button id="botonmonto" class="botonmonto">Toca aquí</button>
           <div id="salidaMonto"></div>
         </label>
-      </div>
-
-      <div class="col">
-        <h3>Egresos</h3>
-        <div id="egresos"></div>
 
       </div>
 
     </div>
-  </div>
+  </div>  
+  <div class="col-egresos">
+    <h3 class="label-egresos">Egresos</h3>
+    <div id="egresos"></div>
+    </div>
 
-
+    <canvas id="bar" width="350px" height="150px"></canvas>
+    
 
   <!--SCRIPTS-->
   <script src="js/script.js"></script>

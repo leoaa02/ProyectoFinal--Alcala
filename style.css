@@ -1,58 +1,190 @@
-*{
-    background-color: #1f1040;
+
+/*MODO OSCURO*/
+#toggle{
+    display: none;
+}
+#label_toggle{
+    position: absolute;
+    top: 0.625em;
+    right: 0.625em;
+    font-size: 2em;
+    color: rgb(255, 223, 100);
+    cursor: pointer;
+}
+
+.dark{
+    background-color: #082a44;
     color: white;
+    transition: all 1.5s ease;
 }
 /*TITULO */
 .titulo{
     color: rgb(162, 162, 230);
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    transition: color 0.3 ease-in-out;
+    cursor: pointer;
 }
-
+.titulo:hover{
+    animation: cambioColor 0.5s forwards;
+}
+@keyframes cambioColor {
+    0% {
+        color: rgb(162, 162, 230); /* Color inicial */
+    }
+    50% {
+        color: rgb(255, 223, 100); /* Color intermedio */
+    }
+    100% {
+        color: rgb(255, 200, 170); /* Color final */
+    }
+}
 .text{
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    ;
 }
-/*Dinero Disponible*/
+
+/*CONTENEDOR*/
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    
+}
+/*COLUMNAS*/
+.col-1{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #d97742;
+    border-radius: 2em;
+    flex-direction: column;
+    width: 21.875em;
+    height: 9.375em;
+    margin: 20px;
+    padding: 10px;
+
+}
+.col-2{
+    display: flex;
+    flex-basis: 500px;
+    background-color: #d97742;
+    border-radius: 2em;
+    flex-direction: column;
+    width: 21.875em;
+    height: 9.375em;
+    margin: 20px;
+    padding: 10px;
+}
+
+.col-3{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #d97742;
+    border-radius: 2em;
+    flex-direction:column;
+    width: 21.875em;
+    height: 9.375em;
+    margin: 20px;
+    padding: 10px;
+}
+
+/*COLUMNA EGRESOS*/
+.col-egresos{
+    display: flex;
+    background-color: #d97742;
+    border-radius: 2em;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+/*DINERO DISPONIBLE USUARIO*/
 .titulodinerodisponible{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
 }
 
 .dinerodisponible{
-    color: rgb(255, 255, 255);
-    border-radius: 2px;
-    border-color: plum;
+    color: rgb(7, 5, 5);
+    border-radius: 0.25em;
+    width: fit-content;
+    height:fit-content;
+    border-color:darkblue;
+    align-items: center;
+}
+.botondinero{
+    color: white;
+    background-color: goldenrod;
+    width: 60px;
+    height: 50px;
+    border-radius: 1em;
+    border-color: #d5c516;
+    cursor: pointer;
+    transition: color ease-in-out;
+}
+.botondinero:hover{
+    background-color: gold;
+    
 }
 .textinput{
-    color: rgb(255, 255, 255);
+    color: rgb(15, 10, 10);
     border-radius: 2px;
     border-color: plum;
 
 }
+
+
 /*TABLA GASTOS*/
 .container-gastos{
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 15px;
 }
 
 .table{
     display: flex;
-    align-items: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
     
 }
-
-.col{
-    justify-content: space-between;
-    margin: 2%;
-    padding: 1%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.categoria{
+    border-radius: 1em;
     
 }
+.categoria:hover{
+    background-color: gold;
+    transition: 0.4s;
+}
 
+/*MONTO GASTOS USUARIO*/
+.label-monto{
+    font-family: Arial, Helvetica, sans-serif;
+}
 .monto{
-    color: rgb(255, 255, 255);
-    border-radius: 2px;
-    border-color: plum;
+    color: rgb(12, 7, 7);
+    border-radius: 0.25em;
+    border-color: darkblue;
 
 }
+
+.botonmonto{
+    color: white;
+    background-color: goldenrod;
+    width: 60px;
+    height: 50px;
+    border-radius: 1.5em;
+    border-color: #d5c516;
+    cursor: pointer;
+    transition: color ease-in-out;
+}
+
+.botonmonto:hover{
+    background-color: gold;
+}
+
+/*EGRESOS*/
+.label-egresos{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
