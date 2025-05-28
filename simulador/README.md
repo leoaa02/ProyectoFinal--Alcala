@@ -1,8 +1,35 @@
-# React + Vite
+# 💸 Pocket Plan
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Pocket Plan** es un simulador de gastos simple e intuitivo, diseñado para ayudarte a planificar tu presupuesto personal o familiar de forma visual y práctica.
 
-Currently, two official plugins are available:
+## 📌 Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📊 Simulación de ingresos y egresos mensuales.
+- 🧾 Registro de gastos por categorías.
+- 📈 Visualización de estadísticas (gráficos e indicadores).
+- 🎯 Establecimiento de objetivos de ahorro.
+- 💾 Persistencia de datos en el navegador (localStorage).
+
+## 🚀 Tecnologías utilizadas
+
+- **React**: Librería principal para la interfaz.
+- **JavaScript (ES6+)**: Lógica de la aplicación.
+- **HTML5 & CSS3**: Estructura y estilos.
+- **Vite**: Herramienta de desarrollo rápido.
+
+## 📂 Estructura del proyecto
+
+```bash
+simulador/
+├── .gitignore
+├── eslint.config.js
+├── package-lock.json
+├── package.json
+├── README.md
+├── vite.config.js
+├── index.html
+├── style.css
+├── js/
+│   └── (archivos JS del proyecto)
+├── node_modules/
+│   └── (módulos instalados por npm)

@@ -14,9 +14,10 @@
 
 <body>
   <h1 class="titulo">POCKET PLAN</h1>
-  <hr>
   <p class="text">Este simulador te permite calcular cuánto dinero te queda después de ingresar
     tus gastos.</p>
+  
+  
 
     <!--MODO OSCURO-->
     <label for="toggle" id="label_toggle"> <i class="fa-solid fa-moon"></i></label>
@@ -26,7 +27,7 @@
     <div class="container">
     <div class="row align-items-start">
     <div class="col-1">
-    <label for="dineroDisponible" class="titulodinerodisponible">Dinero Disponible:</label>
+    <label for="dineroDisponible" class="label-dinero-disponible">Dinero Disponible:</label>
     <input type="text" min="0" id="dineroDisponible" class="dinerodisponible" placeholder="Ingresa tu disponibilidad" required>
     <button id="botonDinero" class="botondinero">Toca aquí</button>
     <div id="salida"></div>
@@ -36,7 +37,7 @@
       <div class="container-gastos">
         <div class="table">
           <div class="col">
-            Categoria:
+            <label for="categoria" class="label-categoria">Categoria</label>
             <select name="categoria" id="categoria" class="categoria">
               <option value="0">Seleccione</option>
               <option value="Comida">Comida</option>
@@ -66,7 +67,7 @@
   </div>  
   <div class="col-egresos">
     <h3 class="label-egresos">Egresos</h3>
-    <div id="egresos"></div>
+    <div id="egresos" class="salida-egresos"></div>
     </div>
 
     <canvas id="bar" width="350px" height="150px"></canvas>
