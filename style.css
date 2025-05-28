@@ -14,7 +14,7 @@
 
 .dark{
     background-color: #082a44;
-    color: white;
+    color: rgb(8, 7, 7);
     transition: all 1.5s ease;
 }
 /*TITULO */
@@ -24,24 +24,14 @@
     text-align: center;
     transition: color 0.3 ease-in-out;
     cursor: pointer;
+    
 }
-.titulo:hover{
-    animation: cambioColor 0.5s forwards;
-}
-@keyframes cambioColor {
-    0% {
-        color: rgb(162, 162, 230); /* Color inicial */
-    }
-    50% {
-        color: rgb(255, 223, 100); /* Color intermedio */
-    }
-    100% {
-        color: rgb(255, 200, 170); /* Color final */
-    }
-}
+
+
 .text{
     font-family: Arial, Helvetica, sans-serif;
-    ;
+    text-align: center;
+    
 }
 
 /*CONTENEDOR*/
@@ -50,57 +40,78 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    background-color: rgb(162, 162, 230);
     
 }
-/*COLUMNAS*/
+
 .col-1{
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: #d97742;
-    border-radius: 2em;
     flex-direction: column;
-    width: 21.875em;
-    height: 9.375em;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 1.5em;
+    width: 22em;
+    height: 10em;
     margin: 20px;
-    padding: 10px;
-
+    padding: 20px 24px;
+    box-shadow: 2px;
+    gap: 12px;
 }
+
 .col-2{
     display: flex;
-    flex-basis: 500px;
-    background-color: #d97742;
-    border-radius: 2em;
     flex-direction: column;
-    width: 21.875em;
-    height: 9.375em;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 1.5em;
+    width: 22em;
+    height: 10em;
     margin: 20px;
-    padding: 10px;
+    padding: 20px 24px;
+    box-shadow: 2px;
+    gap: 12px;
 }
 
 .col-3{
     display: flex;
-    justify-content: space-evenly;
-    background-color: #d97742;
-    border-radius: 2em;
-    flex-direction:column;
-    width: 21.875em;
-    height: 9.375em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 1.5em;
+    width: 22em;
+    height: 8em;
     margin: 20px;
-    padding: 10px;
+    padding: 20px 24px;
+    box-shadow: 2px;
+    gap: 15px;
 }
 
-/*COLUMNA EGRESOS*/
-.col-egresos{
-    display: flex;
-    background-color: #d97742;
-    border-radius: 2em;
-    flex-direction: column;
-    justify-content: space-evenly;
+/* Inputs y select */
+.col-1 input,
+.col-2 select,
+.col-3 input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #b9b9e3;
+    border-radius: 12px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+    align-items: center;
+}
+
+.col-1 input:focus,
+.col-2 select:focus,
+.col-3 input:focus {
+    border-color: #8b89f0;
 }
 
 /*DINERO DISPONIBLE USUARIO*/
-.titulodinerodisponible{
+.label-dinero-disponible{
     font-family: Arial, Helvetica, sans-serif, sans-serif;
 }
 
@@ -114,18 +125,19 @@
 }
 .botondinero{
     color: white;
-    background-color: goldenrod;
+    background-color: rgb(162, 162, 230);
     width: 60px;
     height: 50px;
     border-radius: 1em;
-    border-color: #d5c516;
+    border-color: #b9b9e3;
     cursor: pointer;
     transition: color ease-in-out;
 }
 .botondinero:hover{
-    background-color: gold;
+    background-color: #b9b9e3;
     
 }
+
 .textinput{
     color: rgb(15, 10, 10);
     border-radius: 2px;
@@ -148,43 +160,77 @@
     justify-content: center;
     
 }
+
+.label-categoria{
+    text-align: center;
+    margin: 10px;
+    gap: 10px;
+
+    
+}
 .categoria{
     border-radius: 1em;
+    align-items: center;
+    margin: 10px;
     
 }
 .categoria:hover{
-    background-color: gold;
+    background-color: rgb(162, 162, 230);
     transition: 0.4s;
+    margin: 10px;
+    align-items: center;
 }
 
 /*MONTO GASTOS USUARIO*/
 .label-monto{
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    gap: 10px;
+    margin: 10px;
 }
 .monto{
     color: rgb(12, 7, 7);
+    align-items: center;
     border-radius: 0.25em;
     border-color: darkblue;
+    gap: 15px;
+    margin: 10px;
 
 }
 
 .botonmonto{
     color: white;
-    background-color: goldenrod;
+    background-color: rgb(162, 162, 230);
     width: 60px;
     height: 50px;
-    border-radius: 1.5em;
-    border-color: #d5c516;
+    border-radius: 1em;
+    border-color: #b9b9e3;
     cursor: pointer;
     transition: color ease-in-out;
 }
 
 .botonmonto:hover{
-    background-color: gold;
+    background-color: #b9b9e3;
 }
 
 /*EGRESOS*/
 .label-egresos{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+/*COLUMNA EGRESOS*/
+.col-egresos{
+    display: flex;
+    background-color: rgb(162, 190, 230);
+    border-radius: 2em;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+.salida-egresos{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
 }
 
